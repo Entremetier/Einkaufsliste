@@ -41,7 +41,7 @@ namespace Einkaufsliste
 
         private void cmd_Einkaufsliste_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new MainPage());
+            Navigation.PopToRootAsync();
         }
 
         private void cmd_Artikelliste_Clicked(object sender, EventArgs e)
