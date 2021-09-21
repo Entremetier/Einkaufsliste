@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Einkaufsliste.CreateArtikel"
+             Padding="20"
+             BackgroundColor="#090909">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Artikel erstellen" 
+                   HorizontalOptions="Center" 
+                   FontSize="32" 
+                   FontAttributes="Bold" 
+                   TextColor="Lime"/>
+            <StackLayout Margin="0,50,0,0">
+                <Label Text="Name:" TextColor="White" FontSize="24"/>
+                <Entry 
+                    x:Name="ent_CreateArtName"
+                    Placeholder="Name" 
+                    TextColor="White"
+                    PlaceholderColor="White"
+                    />
+            </StackLayout>
+            <StackLayout VerticalOptions="FillAndExpand">
+                <Label Text="Beschreibung:" TextColor="White" FontSize="24"/>
+                <Editor 
+                    x:Name="edt_CreateArtBeschreibung"
+                    Placeholder="Beschreibung"
+                    TextColor="White"
+                    PlaceholderColor="White"
+                    />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="End">
+                <!--<Button 
+                    x:Name="cmd_Speichern"
+                    Text="Speichern" 
+                    />
+                <Button 
+                    x:Name="cmd_Einkaufsliste"
+                    Text="Einkaufsliste" 
+                    />
+                <Button
+                    x:Name="cmd_Artikelliste"
+                    Text="Artikelliste" />-->
+                <Button 
+                    Text="Speichern" 
+                    x:Name="cmd_Speichern"
+                    Clicked="cmd_Speichern_Clicked"/>
+                <Button 
+                    Text="Einkaufsliste" 
+                    x:Name="cmd_Einkaufsliste"
+                    Clicked="cmd_Einkaufsliste_Clicked"/>
+                <Button 
+                    Text="Artikelliste" 
+                    x:Name="cmd_Artikelliste"
+                    Clicked="cmd_Artikelliste_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
