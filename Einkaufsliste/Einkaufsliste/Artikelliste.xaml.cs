@@ -15,17 +15,21 @@ namespace Einkaufsliste
     {
         internal static ObservableCollection<Product> artikelliste = new ObservableCollection<Product>
         {
-            new Product(){Name = "Apfel", Beschreibung= "Ist ein leckeres Obst"},
-            new Product(){Name = "Maus", Beschreibung= "Kleines Nagetier"},
-            new Product(){Name = "Trabant", Beschreibung= "Klassiker der Automobilindustrie"},
-            new Product(){Name = "Mozartkugeln", Beschreibung= "Nur echt und lecker wenn sie von Fürst sind"}
+            new Product(){Name = "Apfel", Beschreibung= "Ist ein leckeres Obst", WebLink="apfel.png"},
+            new Product(){Name = "Maus", Beschreibung= "Kleines Nagetier", WebLink="maus"},
+            new Product(){Name = "Trabant", Beschreibung= "Klassiker der Automobilindustrie", WebLink = "trabi"},
+            new Product(){Name = "Mozartkugeln", Beschreibung= "Nur echt und lecker wenn sie von Fürst sind", WebLink="mozart"},
+            new Product(){Name = "Birne", Beschreibung= "So ähnlich wie ein Apfel", WebLink="birne"},
+            new Product(){Name = "Evolischuhe", Beschreibung= "Zuckersüß zum anziehen", WebLink="schuhe"}
         };
 
         public Artikelliste()
         {
             InitializeComponent();
 
-            ArtikellisteView.ItemsSource = artikelliste;
+            var sortedList = artikelliste.OrderBy(p => p.Name);
+
+            ArtikellisteView.ItemsSource = sortedList;
         }
 
         private void cmd_Create_Clicked(object sender, EventArgs e)
@@ -40,11 +44,19 @@ namespace Einkaufsliste
 
         private void ArtikellisteView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var artikel = artikelliste.Where(x => x.Equals(e.SelectedItem)).FirstOrDefault(); 
+            var artikel = artikelliste.Where(x => x.Equals(e.SelectedItem)).FirstOrDefault();
 
-            MainPage.einkaufsliste.Add(artikel);
-
-            artikelliste.Remove(artikel);
+            if (MainPage.einkaufsliste.Contains(artikel))
+            {
+               artikel.Zahl += 1;
+               
+            }
+            else
+            {
+                artikel.Zahl = 1;
+                MainPage.einkaufsliste.Add(artikel);
+            }
+            //artikelliste.Remove(artikel);
         }
     }
 }

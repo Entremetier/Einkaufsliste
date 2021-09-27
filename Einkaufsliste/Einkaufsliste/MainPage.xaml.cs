@@ -40,5 +40,10 @@ namespace Einkaufsliste
 
             einkaufsliste.Remove(artikel);
         }
+
+        //protected override void OnAppearing()
+        //{
+        //    EinkaufslisteView.ItemsSource = einkaufsliste;
+        //}
     }
 }

@@ -23,11 +23,20 @@
                     PlaceholderColor="White"
                     />
             </StackLayout>
-            <StackLayout VerticalOptions="FillAndExpand">
+            <StackLayout>
                 <Label Text="Beschreibung:" TextColor="White" FontSize="24"/>
                 <Editor 
                     x:Name="edt_CreateArtBeschreibung"
                     Placeholder="Beschreibung"
+                    TextColor="White"
+                    PlaceholderColor="White"
+                    />
+            </StackLayout>
+            <StackLayout VerticalOptions="FillAndExpand">
+                <Label Text="WebLink:" TextColor="White" FontSize="24"/>
+                <Entry 
+                    x:Name="ent_CreateArtLink"
+                    Placeholder="Link"
                     TextColor="White"
                     PlaceholderColor="White"
                     />

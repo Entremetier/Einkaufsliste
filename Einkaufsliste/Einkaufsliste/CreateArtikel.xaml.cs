@@ -29,14 +29,20 @@ namespace Einkaufsliste
             {
                 edt_CreateArtBeschreibung.Text = "Keine Angabe";
             }
+            if (string.IsNullOrWhiteSpace(ent_CreateArtLink.Text))
+            {
+                ent_CreateArtLink.Text = "sponge";
+            }
 
             product.Name = ent_CreateArtName.Text;
             product.Beschreibung = edt_CreateArtBeschreibung.Text;
+            product.WebLink = ent_CreateArtLink.Text;
 
             Artikelliste.artikelliste.Add(product);
 
             ent_CreateArtName.Text = "";
             edt_CreateArtBeschreibung.Text = "";
+            ent_CreateArtLink.Text = "";
         }
 
         private void cmd_Einkaufsliste_Clicked(object sender, EventArgs e)

@@ -15,14 +15,24 @@
             FontSize="32" 
             FontAttributes="Bold" 
             TextColor="Lime"/>
-        <ListView x:Name="EinkaufslisteView" ItemSelected="EinkaufslisteView_ItemSelected">
+        <ListView x:Name="EinkaufslisteView" ItemSelected="EinkaufslisteView_ItemSelected" RowHeight="200">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell 
-                        Text="{Binding Name}" 
-                        Detail="{Binding Beschreibung}"
-                        TextColor="Lime" 
-                        DetailColor="White"/>
+                    <!--<ImageCell 
+                                   Text="{Binding Name}"
+                                   Detail="{Binding Beschreibung}"
+                                   ImageSource="{Binding WebLink}"
+                                   TextColor="Lime"
+                                   DetailColor="White">
+                    </ImageCell>-->
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical">
+                            <Label  Text="{Binding Zahl}" TextColor="Lime"/>
+                            <Label  Text="{Binding Name}" TextColor="Lime"/>
+                            <Label  Text="{Binding Beschreibung}" TextColor="White"/>
+                            <!--<Label  Text="{Binding WebLink}"/>-->
+                        </StackLayout>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

@@ -19,11 +19,14 @@
                 ItemSelected="ArtikellisteView_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell 
-                            Text="{Binding Name}" 
-                            Detail="{Binding Beschreibung}" 
-                            TextColor="Lime" 
-                            DetailColor="White" />
+                       
+                        <ImageCell Text="{Binding Name}"
+                                   Detail="{Binding Beschreibung}"
+                                   ImageSource="{Binding WebLink}"
+                                   TextColor="Lime"
+                                   DetailColor="White">
+                        </ImageCell>
+                        
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
