@@ -46,17 +46,13 @@ namespace Einkaufsliste
         {
             var artikel = artikelliste.Where(x => x.Equals(e.SelectedItem)).FirstOrDefault();
 
-            if (MainPage.einkaufsliste.Contains(artikel))
-            {
-               artikel.Zahl += 1;
-               
-            }
+            if (MainPage.einkaufsliste.Contains(artikel)) artikel.Zahl += 1;
             else
             {
                 artikel.Zahl = 1;
                 MainPage.einkaufsliste.Add(artikel);
             }
-            //artikelliste.Remove(artikel);
+            //DisplayAlert(artikel.Name, $"wurde der Einkaufsliste hinzugefügt!", "Ok");
         }
     }
 }

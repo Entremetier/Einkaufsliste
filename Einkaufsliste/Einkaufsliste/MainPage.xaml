@@ -15,22 +15,24 @@
             FontSize="32" 
             FontAttributes="Bold" 
             TextColor="Lime"/>
-        <ListView x:Name="EinkaufslisteView" ItemSelected="EinkaufslisteView_ItemSelected" RowHeight="200">
+        <ListView x:Name="EinkaufslisteView" ItemSelected="EinkaufslisteView_ItemSelected" RowHeight="100">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <!--<ImageCell 
-                                   Text="{Binding Name}"
-                                   Detail="{Binding Beschreibung}"
-                                   ImageSource="{Binding WebLink}"
-                                   TextColor="Lime"
-                                   DetailColor="White">
+                    <!--<ImageCell
+                        Text="{Binding Name}"
+                        Detail="{Binding Beschreibung}"
+                        ImageSource="{Binding WebLink}"
+                        TextColor="Lime"
+                        DetailColor="White">
                     </ImageCell>-->
                     <ViewCell>
-                        <StackLayout Orientation="Vertical">
-                            <Label  Text="{Binding Zahl}" TextColor="Lime"/>
-                            <Label  Text="{Binding Name}" TextColor="Lime"/>
-                            <Label  Text="{Binding Beschreibung}" TextColor="White"/>
-                            <!--<Label  Text="{Binding WebLink}"/>-->
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding Zahl}" TextColor="Lime" VerticalTextAlignment="Center"/>
+                            <Image Source="{Binding WebLink}" WidthRequest="60" HeightRequest="50" Margin="50,0,0,0"/>
+                            <StackLayout Orientation="Vertical" VerticalOptions="Center" Margin="25,0,0,0">
+                                <Label Text="{Binding Name}" TextColor="Lime"/>
+                                <Label Text="{Binding Beschreibung}" TextColor="White"/>
+                            </StackLayout>
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

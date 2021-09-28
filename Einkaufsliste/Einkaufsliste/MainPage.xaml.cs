@@ -36,14 +36,13 @@ namespace Einkaufsliste
         private void EinkaufslisteView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var artikel = einkaufsliste.Where(x => x.Equals(e.SelectedItem)).FirstOrDefault();
-            Artikelliste.artikelliste.Add(artikel);
 
             einkaufsliste.Remove(artikel);
         }
 
-        //protected override void OnAppearing()
-        //{
-        //    EinkaufslisteView.ItemsSource = einkaufsliste;
-        //}
+        protected override void OnAppearing()
+        {
+            EinkaufslisteView.ItemsSource = einkaufsliste;
+        }
     }
 }
